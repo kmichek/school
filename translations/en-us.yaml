@@ -1,7 +1,13 @@
 price_banner: The {product} costs {price, number, ::currency/USD}
-hello:
-  world: Hello world!
 classrooms:
   classroom1: Classroom 1
   classroom2: Classroom 2
+  exercise1: Add and subtract of 2
+  exercise2: Add and subtract of 3
+  exercise3: Greater or smaller
+  exercise4: Signs
+  numberOfExercises: Questions
+  resultLimit: Result limit
+  range: Range from to
+  elements: numbers
 

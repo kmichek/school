@@ -1,0 +1,29 @@
+<PaperCard as |card|>
+  <div class="layout-row flex layout-align-center" style="padding-top: 20px;">{{t "classrooms.exercise3"}}</div>
+
+  <div class="layout-row flex layout-align-center" style="padding-top: 20px;">
+    <div id="dvQuestion" class="answerBtn">{{this.teacher.question.questionPre1}}</div>
+    <div id="dvAnswer" class="answerBtn"> &emsp; &emsp;{{this.teacher.answer}}</div>
+  </div>
+
+  <div class="layout-row flex layout-align-center" style="padding-top: 20px; width: 720px;">
+    <PaperButton @raised={{true}} @fab={{true}} @onClick={{action "calc" ">"}} class="answerBtn"><font style="font-size: 30px;">&gt;</font></PaperButton>
+    <PaperButton @raised={{true}} @fab={{true}} @onClick={{action "calc" "<"}} class="answerBtn"><font style="font-size: 30px;">&lt;</font></PaperButton>
+    <PaperButton @raised={{true}} @fab={{true}} @onClick={{action "calc" "="}} class="answerBtn"><font style="font-size: 30px;">=</font></PaperButton>
+  </div>
+
+  <div class="layout-row flex layout-align-center" style="padding-top: 20px;">
+    <div id="dvCompleted" class="answerBtn">{{this.teacher.completed}}</div>
+  </div>
+
+  <div class="layout-row flex layout-align-center" style="padding-top: 20px;">
+    <div id="dvFireworks" style="display:none; ">
+      <img src="../../Fireworks.gif" />
+    </div>
+    <br>
+    <div id="dvPicture" style="display:none; ">
+      <img src="../../Dolphin.png">
+    </div>
+  </div>
+
+</PaperCard>

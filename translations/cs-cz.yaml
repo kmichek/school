@@ -1,6 +1,12 @@
-hello:
-  world: No nazdáreček!
 classrooms:
   classroom1: Učebna 1
   classroom2: Učebna 2
+  exercise1: Sčítat a odečítat 2
+  exercise2: Sčítat a odečítat 3
+  exercise3: Větší a menší
+  exercise4: Znaménka
+  numberOfExercises: Příkladů
+  resultLimit: Max výsledek do
+  range: Rozsah čísel od do
+  elements: čísla
 

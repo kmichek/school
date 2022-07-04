@@ -8,11 +8,41 @@
       "**/node_modules/**"
     ],
     "redirects": [
-    {
+      {
+      "source": "/classroom1",
+      "destination": "/",
+      "type": 301
+      },
+      {
+      "source": "/classroom2",
+      "destination": "/",
+      "type": 301
+      },
+      {
+      "source": "/classroom1/exercise1",
+      "destination": "/",
+      "type": 301
+      },
+      {
+      "source": "/classroom1/exercise2",
+      "destination": "/",
+      "type": 301
+      },
+      {
+      "source": "/classroom1/exercise3",
+      "destination": "/",
+      "type": 301
+      },
+      {
+      "source": "/classroom1/exercise4",
+      "destination": "/",
+      "type": 301
+      },
+      {
       "source": "/home",
       "destination": "/",
       "type": 301
-    }]
-
+      }
+    ]
   }
 }
