@@ -1,3 +1,0 @@
-ember build && firebase deploy
-
-ghp_3CV8pCwwkE3zr3UmPI3ALH7b5Z0iba1LiK1o
