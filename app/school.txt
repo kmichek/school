@@ -1,7 +1,6 @@
 ember build && firebase deploy
 
-ghp_3CV8pCwwkE3zr3UmPI3ALH7b5Z0iba1LiK1o
-
+------------------------------
 
 git remote add origin https://github.com/kmichek/school.git
 git commit
@@ -9,5 +8,4 @@ git push -u origin master
 
 git config credential.helper store
 git push https://github.com/kmichek/school.git
-
 git clone https://github.com/kmichek/school.git
