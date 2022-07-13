@@ -1,10 +1,10 @@
 {{page-title "School"}}
 
 <div class="layout-row flex">
-  <div class="flex-5" style=""></div>
-  <div class="flex-90" style="">
+  <div class="flex-5"></div>
+  <div class="flex-90">
     <div class="layout-row flex">
-      <div class="flex" style="">
+      <div class="flex" style="max-width:975px;">
         <PaperTabs @center={{center}} @stretch={{stretch}} @borderBottom={{true}} @selected={{selectedBasicTab}} @onChange={{action (mut selectedBasicTab)}} as |tabs|>
           <tabs.tab @href={{href-to "classroom1"}}>
             {{t "classrooms.classroom1"}}
@@ -27,16 +27,17 @@
       {{outlet}}
     </div>
   </div>
-  <div class="flex-5" style=""></div>
+  <div class="flex-5"></div>
+</div>
+
+<div class="layout-row flex">
+  <div class="flex-5"></div>
+  <div class="flex-90">
+      <div style="width:1116px; text-align:center; padding-top:10px; padding-bottom:10px;">
+        {{this.teacher.result}}
+      </div>
+  </div>
+  <div class="flex-5"></div>
 </div>
 
 <div class="fixed">v.1.0</div>
-
-<style>
-div.fixed {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-}
-</style>
-

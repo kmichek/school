@@ -9,4 +9,5 @@ classrooms:
   resultLimit: Max výsledek do
   range: Rozsah čísel od do
   elements: čísla
-
+  resultOK: Naprosto správně!
+  resultNOK: Ještě trochu pocvičíme.

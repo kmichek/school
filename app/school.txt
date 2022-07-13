@@ -1,4 +1,5 @@
 ember build && firebase deploy
+ember build && firebase deploy
 
 ------------------------------
 

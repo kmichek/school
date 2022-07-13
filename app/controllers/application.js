@@ -8,6 +8,7 @@ import { action } from '@ember/object';
 export default class ApplicationController extends Controller {
 
   @service intl;
+  @service teacher;
 
   selectedBasicTab = 0;
 

@@ -17,12 +17,10 @@ export default class Sign extends Component {
   constructor() {
     super(...arguments);
     let self = this;
-    //if (!this.teacher.has('__sign')) {
-      this.teacher.on('__sign',function (maxResult, range1, range2, count) {
-          self.start(maxResult, range1, range2, count);
-        }
-      );
-    //}
+    this.teacher.on('__sign',function (maxResult, range1, range2, count) {
+        self.start(maxResult, range1, range2, count);
+      }
+    );
     this.teacher.question = null;
   }
 
@@ -86,10 +84,9 @@ export default class Sign extends Component {
           this.teacher.question = this.teacher.questions[0];
         }
       }
-      if (this.teacher.questions.length == 0) {
-        document.getElementById('dvFireworks').style.display = 'block';
-        document.getElementById('dvPicture').style.display = 'none';
-      }
+
+      this.finito();
+
     }, 2000);
   }
 
@@ -101,6 +98,15 @@ export default class Sign extends Component {
       } else if (token[1] === '-') {
         return token[0] * 1 - token[2] * 1;
       }
+    }
+  }
+
+  finito() {
+    if (this.teacher.questions.length == 0) {
+      document.getElementById('dvFireworks').style.display = 'block';
+      document.getElementById('dvPicture').style.display = 'none';
+
+      this.teacher.finito();
     }
   }
 
@@ -119,6 +125,7 @@ export default class Sign extends Component {
   @action start2(maxResult, range1, range2, count) {
     this.teacher.questions = [];
     this.teacher.results = [];
+    this.teacher.result = null;
     let high1 = range1.substring(range1.indexOf(' - ') + 3, range1.length);
     let high2 = range2.substring(range2.indexOf(' - ') + 3, range2.length);
     let counter = count * 1;

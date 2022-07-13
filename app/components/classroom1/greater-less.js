@@ -54,17 +54,25 @@ export default class PlusMinus extends Component {
           this.teacher.question = this.teacher.questions[0];
         }
       }
-      if (this.teacher.questions.length == 0) {
-        document.getElementById('dvFireworks').style.display = 'block';
-        document.getElementById('dvPicture').style.display = 'none';
-      }
+      this.finito();
+
     }, 2000);
+  }
+
+  finito() {
+    if (this.teacher.questions.length == 0) {
+      document.getElementById('dvFireworks').style.display = 'block';
+      document.getElementById('dvPicture').style.display = 'none';
+
+      this.teacher.finito();
+    }
   }
 
   @action start(range1, range2, count) {
     if (range1 && range2 && count) {
       this.teacher.questions = [];
       this.teacher.results = [];
+      this.teacher.result = null;
       let high1 = range1.substring(range1.indexOf(' - ') + 3, range1.length);
       let high2 = range2.substring(range2.indexOf(' - ') + 3, range2.length);
       let counter = count * 1;

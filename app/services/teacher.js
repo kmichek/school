@@ -1,8 +1,13 @@
+/* eslint-disable prettier/prettier */
 import Service from '@ember/service';
+import { inject as service } from '@ember/service';
 import Evented from '@ember/object/evented'; // trigger events
 import { tracked } from '@glimmer/tracking';
+import { t } from 'ember-intl';
 
 export default class TeacherService extends Service.extend(Evented) {
+
+  @service intl;
   //
   @tracked quizMode;
   //
@@ -17,4 +22,20 @@ export default class TeacherService extends Service.extend(Evented) {
   @tracked answer = '';
   @tracked completed;
   @tracked results;
+  @tracked result;
+
+  finito() {
+    if (this.results){
+      if (this.results.every(this.everyOK)) {
+        this.result = this.intl.t('classrooms.resultOK');
+
+      } else {
+        this.result = this.intl.t('classrooms.resultNOK');
+      }
+    }
+  }
+
+  everyOK(value, index, array) {
+    return value.status === 'OK';
+  }
 }

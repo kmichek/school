@@ -10,4 +10,5 @@ classrooms:
   resultLimit: Result limit
   range: Range from to
   elements: numbers
-
+  resultOK: Perfectly correct!
+  resultNOK: Let's practice some more.
