@@ -15,17 +15,17 @@
       {{/paper-link-item}}
     </PaperList>
     <div>
-      <PaperSelect @label={{t "classrooms.numberOfExercises"}} @options={{counts}} @selected={{count}} @onChange={{action (mut count)}} as |count|>
+      <PaperSelect @label={{t "classrooms.numberOfExercises"}} @options={{counts}} @selected={{count}} @onChange={{action configSelectCount}} as |count|>
         {{count}}
       </PaperSelect>
     </div>
     <div>
-      <PaperSelect @label={{t "classrooms.resultLimit"}} @options={{maxResults}} @selected={{maxResult}} @onChange={{action (mut maxResult)}} as |maxResult|>
+      <PaperSelect @label={{t "classrooms.resultLimit"}} @options={{maxResults}} @selected={{maxResult}} @onChange={{action configSelectMaxResult}} as |maxResult|>
         {{maxResult}}
       </PaperSelect>
     </div>
     <div>
-      <PaperSelect @label={{t "classrooms.range"}} @options={{ranges1}} @selected={{range1}} @onChange={{action (mut range1)}} as |range1|>
+      <PaperSelect @label={{t "classrooms.range"}} @options={{ranges1}} @selected={{range1}} @onChange={{action configSelectRange1}} as |range1|>
         {{range1}}
       </PaperSelect>
     </div>

@@ -8,11 +8,13 @@ import { action } from '@ember/object';
 export default class ApplicationController extends Controller {
 
   @service intl;
+  @service cookies;
   @service teacher;
 
   selectedBasicTab = 0;
 
   @action changeLocale(locale) {
+    this.cookies.write('configLocale', locale);
     return this.intl.set('locale', locale);
   }
 }

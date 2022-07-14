@@ -4,8 +4,12 @@ import { inject as service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 
+const { keys } = Object;
+
 export default class Quiz extends Component {
 
+  @service intl;
+  @service cookies;
   @service teacher;
 
   @tracked results;
@@ -25,8 +29,46 @@ export default class Quiz extends Component {
     let self = this;
     this.teacher.on('__results', function(results) {
       self.results = results;
-
     });
+
+    this.configReload();
+  }
+
+  configReload(){
+    let cookieService = this.cookies;
+    let cookiesMap = cookieService.read();
+    keys(cookiesMap).reduce((acc, key) => {
+      let value = cookiesMap[key];
+      switch(key) {
+        case 'configCount':
+          this.count = value;
+          break;
+        case 'configMaxResult':
+          this.maxResult = value;
+          break;
+        case 'configRange1':
+          this.range1 = value;
+          break;
+        case 'configLocale':
+          this.intl.set('locale', value);
+          break;
+      }
+    }, []);
+  }
+
+  @action configSelectCount(value){
+    this.count = value;
+    this.cookies.write('configCount', value);
+  }
+
+  @action configSelectMaxResult(value){
+    this.maxResult = value;
+    this.cookies.write('configMaxResult', value);
+  }
+
+  @action configSelectRange1(value){
+    this.range1 = value;
+    this.cookies.write('configRange1', value);
   }
 
   @action start() {
