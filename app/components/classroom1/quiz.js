@@ -5,6 +5,7 @@ import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 
 const { keys } = Object;
+const options = {sameSite: 'none', secure: true};
 
 export default class Quiz extends Component {
 
@@ -58,17 +59,17 @@ export default class Quiz extends Component {
 
   @action configSelectCount(value){
     this.count = value;
-    this.cookies.write('configCount', value);
+    this.cookies.write('configCount', value, options);
   }
 
   @action configSelectMaxResult(value){
     this.maxResult = value;
-    this.cookies.write('configMaxResult', value);
+    this.cookies.write('configMaxResult', value, options);
   }
 
   @action configSelectRange1(value){
     this.range1 = value;
-    this.cookies.write('configRange1', value);
+    this.cookies.write('configRange1', value, options);
   }
 
   @action start() {

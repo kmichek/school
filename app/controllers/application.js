@@ -5,6 +5,8 @@ import Controller from '@ember/controller';
 import { inject as service } from '@ember/service';
 import { action } from '@ember/object';
 
+const options = {sameSite: 'none', secure: true};
+
 export default class ApplicationController extends Controller {
 
   @service intl;
@@ -14,7 +16,7 @@ export default class ApplicationController extends Controller {
   selectedBasicTab = 0;
 
   @action changeLocale(locale) {
-    this.cookies.write('configLocale', locale);
+    this.cookies.write('configLocale', locale, options);
     return this.intl.set('locale', locale);
   }
 }
