@@ -5,7 +5,7 @@ import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 
 const { keys } = Object;
-const options = {sameSite: 'none', secure: true};
+const cookieOptionsClassroom1 = {sameSite: 'none', secure: true, path: 'classroom1'};
 
 export default class Quiz extends Component {
 
@@ -21,7 +21,7 @@ export default class Quiz extends Component {
   @tracked ranges1 = ['0 - 1', '0 - 2', '0 - 3', '0 - 4', '0 - 5', '0 - 6', '0 - 7', '0 - 8', '0 - 9', '0 - 10', '0 - 20', '0 - 30', '0 - 40', '0 - 50'];
   @tracked range1 = '0 - 10';
 
-  @tracked maxResults = ['10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '30', '40', '50', '100'];
+  @tracked maxResults = ['10', '15', '20', '30', '40', '50', '60', '70', '80', '90', '100'];
   @tracked maxResult = '10';
 
   constructor() {
@@ -59,17 +59,17 @@ export default class Quiz extends Component {
 
   @action configSelectCount(value){
     this.count = value;
-    this.cookies.write('configCount', value, options);
+    this.cookies.write('configCount', value, cookieOptionsClassroom1);
   }
 
   @action configSelectMaxResult(value){
     this.maxResult = value;
-    this.cookies.write('configMaxResult', value, options);
+    this.cookies.write('configMaxResult', value, cookieOptionsClassroom1);
   }
 
   @action configSelectRange1(value){
     this.range1 = value;
-    this.cookies.write('configRange1', value, options);
+    this.cookies.write('configRange1', value, cookieOptionsClassroom1);
   }
 
   @action start() {
