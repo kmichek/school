@@ -6,6 +6,7 @@ classrooms:
   exercise2: Add and subtract of 3
   exercise3: Greater or smaller
   exercise4: Signs
+  exercise5: Subtracting
   numberOfExercises: Questions
   resultLimit: Result limit
   range: Range from to

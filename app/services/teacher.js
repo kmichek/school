@@ -16,6 +16,7 @@ export default class TeacherService extends Service.extend(Evented) {
   quizPlusMinus3 = 'Q_PLUS_MINUS_3';
   quizGreaterLess = 'Q_GREATER_LESS';
   quizSign2 = 'Q_SIGN2';
+  quizSubtractOrder = 'Q_SUBTRACT_ORDER';
 
   @tracked questions;
   @tracked question;

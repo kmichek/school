@@ -72,5 +72,8 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "dependencies": {
+    "firebase": "^9.9.3"
   }
 }

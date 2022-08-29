@@ -13,6 +13,9 @@
       {{#paper-link-item 'classroom1.exercise4'}}
         <p>{{t "classrooms.exercise4"}}</p>
       {{/paper-link-item}}
+      {{#paper-link-item 'classroom1.exercise5'}}
+        <p>{{t "classrooms.exercise5"}}</p>
+      {{/paper-link-item}}
     </PaperList>
     <div>
       <PaperSelect @label={{t "classrooms.numberOfExercises"}} @options={{counts}} @selected={{count}} @onChange={{action configSelectCount}} as |count|>

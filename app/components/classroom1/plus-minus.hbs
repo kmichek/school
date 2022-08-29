@@ -1,12 +1,10 @@
 <PaperCard as |card|>
   <div class="layout-row flex layout-align-center" style="padding-top: 20px;">
-
     {{#if (eq this.teacher.quizMode this.teacher.quizPlusMinus2)}}
       {{t "classrooms.exercise1"}} {{t "classrooms.elements"}}
     {{else}}
       {{t "classrooms.exercise2"}} {{t "classrooms.elements"}}
     {{/if}}
-
   </div>
   <div class="layout-row flex layout-align-center" style="padding-top: 20px;">
     <div id="dvQuestion" class="answerBtn">{{this.teacher.question}}</div>
@@ -39,7 +37,4 @@
       <img src="../../Panda.png">
     </div>
   </div>
-
 </PaperCard>
-
-
