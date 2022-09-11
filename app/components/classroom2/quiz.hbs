@@ -1,0 +1,79 @@
+<div class="layout-row">
+  <div class="side-left">
+    <PaperList>
+      {{#paper-link-item 'classroom2.exercise1'}}
+        <p>{{t "classrooms.exercise101"}}</p>
+      {{/paper-link-item}}
+      {{#paper-link-item 'classroom2.exercise2'}}
+        <p></p>
+      {{/paper-link-item}}
+      {{#paper-link-item 'classroom2.exercise2'}}
+        <p></p>
+      {{/paper-link-item}}
+      {{#paper-link-item 'classroom2.exercise2'}}
+        <p></p>
+      {{/paper-link-item}}
+      {{#paper-link-item 'classroom2.exercise2'}}
+        <p></p>
+      {{/paper-link-item}}
+      {{#paper-link-item 'classroom2.exercise2'}}
+        <p></p>
+      {{/paper-link-item}}
+    </PaperList>    
+    <div>
+      <PaperSelect @label={{t "classrooms.numberOfExercises"}} @options={{counts}} @selected={{count}} @onChange={{action configSelectCount2}} as |count|>
+        {{count}}
+      </PaperSelect>
+    </div>
+    <div>
+      <PaperSelect @label={{t "classrooms.range"}} @options={{ranges1}} @selected={{range1}} @onChange={{action configSelectRange2}} as |range1|>
+        {{range1}}
+      </PaperSelect>
+    </div>
+    <div style="padding-left: 88px;">
+      <PaperButton @onClick={{action "start"}} @accent={{true}} @raised={{true}} >Start</PaperButton>
+    </div>
+  </div>
+  <div>
+    {{outlet}}
+  </div>
+  <div class="side-right">
+    <PaperList>
+      {{#each results as |item idx|}}
+        {{#if (eq idx 0)}}
+          <div style="background-color: lightgrey">
+            <PaperItem @class="md-1-line">
+              <div class="md-list-item-text">
+                {{item.question}} &nbsp; ? &nbsp; {{item.answer}} &nbsp; &nbsp; &nbsp;{{item.status}}
+              </div>
+            </PaperItem>
+          </div>
+        {{else}}
+          <PaperItem @class="md-1-line">
+            <div class="md-list-item-text">
+              {{item.question}} &nbsp; ? &nbsp; {{item.answer}} &nbsp; &nbsp; &nbsp;{{item.status}}
+            </div>
+          </PaperItem>
+        {{/if}}
+      {{/each}}
+    </PaperList>
+  </div>
+</div>
+<style>
+  .md-input-has-value{
+    width: 183px !important;
+  }
+</style>
+<!--
+    <div>
+      <PaperSelect @label={{t "classrooms.resultLimit"}} @options={{maxResults}} @selected={{maxResult}} @onChange={{action configSelectMaxResult}} as |maxResult|>
+        {{maxResult}}
+      </PaperSelect>
+    </div>
+</div>
+<style>
+  .md-input-has-value{
+    width: 183px !important;
+  }
+</style>
+-->
