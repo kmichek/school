@@ -48,16 +48,14 @@ export default class PlusMinus extends Component {
         if (solution == this.teacher.answer){
           let result = {question:this.teacher.question, answer:this.teacher.answer, status:'OK'};
           this.teacher.completed = this.teacher.question + ' = ' +this.teacher.answer;
-          this.teacher.results.push(result);
-          this.teacher.trigger('__results', this.teacher.results);
+          this.teacher.addResult(result);
           isCorrect = true;
           ////this.teacher.question = null;
 
         } else {
           let result = {question:this.teacher.question, answer:this.teacher.answer, status:':-('}
           this.completed = ':-(';
-          this.teacher.results.push(result);
-          this.teacher.trigger('__results', this.teacher.results);
+          this.teacher.addResult(result);
         }
         /////this.teacher.answer = '';
 
@@ -125,7 +123,8 @@ export default class PlusMinus extends Component {
   }
 
   @action start(maxResult, range1, range2, count){
-    if (range1 && range2 && count){
+    this.teacher.start(range1);
+    if (range1 && range2 && count){    
       if (this.teacher.quizMode == this.teacher.quizPlusMinus2){
         this.start2(maxResult, range1, range2, count);
 
@@ -140,9 +139,6 @@ export default class PlusMinus extends Component {
   }
 
   @action start2(maxResult, range1, range2, count) {
-    this.teacher.questions = [];
-    this.teacher.results = [];
-    this.teacher.result = null;
     let high1 = range1.substring(range1.indexOf(' - ') +3, range1.length);
     let high2 = range2.substring(range2.indexOf(' - ') +3, range2.length);
     let counter = count *1;
@@ -180,9 +176,6 @@ export default class PlusMinus extends Component {
   }
 
   @action start3(maxResult, range1, range2, count) {
-    this.teacher.questions = [];
-    this.teacher.results = [];
-    this.teacher.result = null;
     let high1 = range1.substring(range1.indexOf(' - ') +3, range1.length);
     let high2 = range2.substring(range2.indexOf(' - ') +3, range2.length);
     let counter = count *1;

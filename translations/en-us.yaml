@@ -13,3 +13,7 @@ classrooms:
   elements: numbers
   resultOK: Perfectly correct!
   resultNOK: Let's practice some more.
+  exercise101: Multiplication
+  range1: RANGE
+  count: QUESTIONS
+  errors: ERRORS

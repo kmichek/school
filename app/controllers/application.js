@@ -9,6 +9,7 @@ const cookieOptionsClassroom1 = {sameSite: 'none', secure: true, path: 'classroo
 
 export default class ApplicationController extends Controller {
 
+  @service router;
   @service intl;
   @service cookies;
   @service teacher;
@@ -18,5 +19,9 @@ export default class ApplicationController extends Controller {
   @action changeLocale(locale) {
     this.cookies.write('configLocale', locale, cookieOptionsClassroom1);
     return this.intl.set('locale', locale);
+  }
+
+  @action stats(){
+    this.router.transitionTo('stats');
   }
 }

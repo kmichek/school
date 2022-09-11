@@ -44,16 +44,14 @@ export default class PlusMinus extends Component {
         if (solution == this.teacher.answer){
           let result = {question:this.teacher.question, answer:this.teacher.answer, status:'OK'};
           this.teacher.completed = this.teacher.question + ' = ' +this.teacher.answer;
-          this.teacher.results.push(result);
-          this.teacher.trigger('__results', this.teacher.results);
+          this.teacher.addResult(result);
           isCorrect = true;
           ////this.teacher.question = null;
 
         } else {
           let result = {question:this.teacher.question, answer:this.teacher.answer, status:':-('}
           this.completed = ':-(';
-          this.teacher.results.push(result);
-          this.teacher.trigger('__results', this.teacher.results);
+          this.teacher.addResult(result);
         }
         /////this.teacher.answer = '';
 
@@ -90,9 +88,7 @@ export default class PlusMinus extends Component {
   }
 
   @action start(maxResult, range1, range2, count) {
-    this.teacher.questions = [];
-    this.teacher.results = [];
-    this.teacher.result = null;
+    this.teacher.start(range1);
     let high1 = range1.substring(range1.indexOf(' - ') +3, range1.length);
     if (high1 < 11){
         high1 = 20;
@@ -122,14 +118,6 @@ export default class PlusMinus extends Component {
 
     document.getElementById('dvFireworks').style.display = 'none';
     document.getElementById('dvPicture').style.display = 'block';
-  }
-
-  @action x(){
-    /*
-    if (this.teacher.answer){
-      this.teacher.answer = this.teacher.answer.substring(0, this.teacher.answer.length-1);
-    }
-    */
   }
 
 }

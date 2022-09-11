@@ -1,5 +1,5 @@
 <div class="layout-row">
-  <div class="sides">
+  <div class="side-left">
     <PaperList>
       {{#paper-link-item 'classroom1.exercise1'}}
         <p>{{t "classrooms.exercise1"}}</p>
@@ -39,14 +39,24 @@
   <div>
     {{outlet}}
   </div>
-  <div class="sides">
+  <div class="side-right">
     <PaperList>
-      {{#each results as |item|}}
-        <PaperItem @class="md-1-line">
-          <div class="md-list-item-text">
-            {{item.question}} &nbsp; ? &nbsp; {{item.answer}} &nbsp; &nbsp; &nbsp;{{item.status}}
+      {{#each results as |item idx|}}
+        {{#if (eq idx 0)}}
+          <div style="background-color: lightgrey">
+            <PaperItem @class="md-1-line">
+              <div class="md-list-item-text">
+                {{item.question}} &nbsp; ? &nbsp; {{item.answer}} &nbsp; &nbsp; &nbsp;{{item.status}}
+              </div>
+            </PaperItem>
           </div>
-        </PaperItem>
+        {{else}}
+          <PaperItem @class="md-1-line">
+            <div class="md-list-item-text">
+              {{item.question}} &nbsp; ? &nbsp; {{item.answer}} &nbsp; &nbsp; &nbsp;{{item.status}}
+            </div>
+          </PaperItem>
+        {{/if}}
       {{/each}}
     </PaperList>
   </div>

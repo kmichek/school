@@ -13,7 +13,7 @@ export default class Quiz extends Component {
   @service cookies;
   @service teacher;
 
-  @tracked results;
+  @tracked results = [];
 
   @tracked counts = ['5', '10', '15', '20', '25', '30', '35', '40', '45', '50'];
   @tracked count = '10';

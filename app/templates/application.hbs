@@ -4,7 +4,7 @@
   <div class="flex-5"></div>
   <div class="flex-90">
     <div class="layout-row flex">
-      <div class="flex" style="max-width:975px;">
+      <div class="flex" style="max-width:905px;">
         <PaperTabs @center={{center}} @stretch={{stretch}} @borderBottom={{true}} @selected={{selectedBasicTab}} @onChange={{action (mut selectedBasicTab)}} as |tabs|>
           <tabs.tab @href={{href-to "classroom1"}}>
             {{t "classrooms.classroom1"}}
@@ -20,6 +20,8 @@
         </PaperButton>
         <PaperButton @raised={{true}} @fab={{true}} @iconButton={{true}} @onClick={{action "changeLocale" "cs-cz"}}>
           <img src="../../icons8-czech-republic-48.png" />
+        </PaperButton>
+        <PaperButton @raised={{true}} @fab={{true}} @iconButton={{true}} @onClick={{action "stats"}} style="background-color: #fafafa;">          
         </PaperButton>
       </div>
     </div>
@@ -40,4 +42,4 @@
   <div class="flex-5"></div>
 </div>
 
-<div class="fixed">v.1.2</div>
+<div class="fixed">v.1.4</div>

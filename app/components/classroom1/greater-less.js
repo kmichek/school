@@ -29,9 +29,8 @@ export default class PlusMinus extends Component {
         status: 'OK',
       };
       this.teacher.completed =
-        this.teacher.question.random1 +' ' +key +' ' +this.teacher.question.random2;
-      this.teacher.results.push(result);
-      this.teacher.trigger('__results', this.teacher.results);
+      this.teacher.question.random1 +' ' +key +' ' +this.teacher.question.random2;
+      this.teacher.addResult(result);
       isCorrect = true;
       this.teacher.question = null;
     } else {
@@ -41,8 +40,7 @@ export default class PlusMinus extends Component {
         status: ':-(',
       };
       this.teacher.completed = ':-(';
-      this.teacher.results.push(result);
-      this.teacher.trigger('__results', this.teacher.results);
+      this.teacher.addResult(result);
     }
     this.teacher.answer = '';
 
@@ -70,9 +68,7 @@ export default class PlusMinus extends Component {
 
   @action start(range1, range2, count) {
     if (range1 && range2 && count) {
-      this.teacher.questions = [];
-      this.teacher.results = [];
-      this.teacher.result = null;
+      this.teacher.start(range1);
       let high1 = range1.substring(range1.indexOf(' - ') + 3, range1.length);
       let high2 = range2.substring(range2.indexOf(' - ') + 3, range2.length);
       let counter = count * 1;

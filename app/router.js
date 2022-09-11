@@ -15,5 +15,9 @@ Router.map(function () {
     this.route('exercise4');
     this.route('exercise5');
   });
-  this.route('classroom2');
+  this.route('classroom2', function () {
+    this.route('exercise1');
+    this.route('exercise2');
+  });
+  this.route('stats');
 });
