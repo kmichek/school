@@ -18,7 +18,7 @@ export default class Quiz extends Component {
   @tracked counts = ['5', '10', '15', '20', '25', '30', '35', '40', '45', '50'];
   @tracked count = '10';
 
-  @tracked ranges1 = ['0 - 1', '0 - 2', '0 - 3', '0 - 4', '0 - 5', '0 - 6', '0 - 7', '0 - 8', '0 - 9', '0 - 10', '0 - 20', '0 - 30', '0 - 40', '0 - 50'];
+  @tracked ranges1 = ['0 - 1', '0 - 2', '0 - 3', '0 - 4', '0 - 5', '0 - 6', '0 - 7', '0 - 8', '0 - 9', '0 - 10', '0 - 20', '0 - 30', '0 - 40', '0 - 50', '50 - 100'];
   @tracked range1 = '0 - 10';
 
   @tracked maxResults = ['10', '15', '20', '30', '40', '50', '60', '70', '80', '90', '100'];
@@ -73,16 +73,16 @@ export default class Quiz extends Component {
   }
 
   @action start() {
-    if (this.teacher.quizMode == this.teacher.quizPlusMinus2 || this.teacher.quizMode == this.teacher.quizPlusMinus3) {
+    if (this.teacher.quizMode === this.teacher.quizPlusMinus2 || this.teacher.quizMode === this.teacher.quizPlusMinus3) {
       this.teacher.trigger('__plusMinus', this.maxResult, this.range1, this.range1, this.count);
 
-    } else if (this.teacher.quizMode == this.teacher.quizGreaterLess){
+    } else if (this.teacher.quizMode === this.teacher.quizGreaterLess){
       this.teacher.trigger('__greaterLess', this.range1, this.range1, this.count);
 
-    } else if (this.teacher.quizMode == this.teacher.quizSign2){
+    } else if (this.teacher.quizMode === this.teacher.quizSign2){
       this.teacher.trigger('__sign', this.maxResult, this.range1, this.range1, this.count);
 
-    } else if (this.teacher.quizMode == this.teacher.quizSubtractOrder){
+    } else if (this.teacher.quizMode === this.teacher.quizSubtractOrder){
       this.teacher.trigger('__subtractOrder', this.maxResult, this.range1, this.range1, this.count);
     }
   }
