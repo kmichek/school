@@ -184,12 +184,13 @@ export default class PlusMinus extends Component {
     let maxZeros = Math.ceil(counter / 10);
     let notOverMaxZeros = true;
     let trueFalses = [true, false];
+    let attempts = 0;
     while (counter > 0) {
       let random1 = Math.floor(Math.random() * high1);
       let random2 = Math.floor(Math.random() * high2);
       let random3 = Math.floor(Math.random() * high1);
-      if (!((random1 == 0 && random2 == 0) || (random1 == 0 && random3 == 0) || (random2 == 0 && random3 == 0))) {
-        if (random1 == 0 || random2 == 0 || random3 == 0) {
+      if (!((random1 === 0 && random2 === 0) || (random1 === 0 && random3 === 0) || (random2 === 0 && random3 === 0))) {
+        if (random1 === 0 || random2 === 0 || random3 === 0) {
           maxZeros--;
           if (maxZeros < 0) {
             notOverMaxZeros = false;
@@ -203,15 +204,10 @@ export default class PlusMinus extends Component {
         let booley2 = trueFalses[trueFalseIdx2];
         let question = random1 + ' + ' + random2 + (booley2 ? ' + ' : ' - ') + random3;
         let result = this.evaluate3(question, maxResult);
-        /*
-        if (result > -1 && !this.teacher.questions.includes(question) && notOverMaxZeros && result <= maxResult){
-          this.teacher.questions.push(question);
-          counter--;
-        }
-        */
+        attempts++;
         if (result > -1 && !this.teacher.questions.includes(question) && notOverMaxZeros && result <= maxResult) {
-          if (high1 == 100) {
-            if (random1 >= 50) { // otherwise skip
+          if (high1 === 100) {
+            if (random1 >= 50 || attempts > 100) {
               this.teacher.questions.push(question);
               counter--;
             }
