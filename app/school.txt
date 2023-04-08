@@ -19,7 +19,16 @@ git clone https://github.com/kmichek/school.git
 https://school-14059.web.app
 
 
+Logging:
+https://console.cloud.google.com/logs/query;query=resource.type%3D%22firebase_domain%22;timeRange=P7D;cursorTimestamp=2023-02-12T05:56:30Z?authuser=0&project=school-14059
 
+
+Analytics:
+https://analytics.google.com/analytics/web/?authuser=0&hl=en#/a88213025p319242767/admin
+https://console.cloud.google.com/apis/credentials?project=school-14059
+apiKey: AIzaSyD24xCaUXv4LgV8OcQif87Csc4HoYnr1l0
+
+-------------------------------------------------------------------------
 Fonts:
 originally:
 Menlo, Monaco, 'Courier New', monospace

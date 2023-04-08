@@ -1,3 +1,4 @@
+{{!-- template-lint-disable no-inline-styles no-forbidden-elements --}}
 <div class="layout-row">
   <div class="side-left">
     <PaperList>
@@ -5,21 +6,22 @@
         <p>{{t "classrooms.exercise101"}}</p>
       {{/paper-link-item}}
       {{#paper-link-item 'classroom2.exercise2'}}
+        <p>{{t "classrooms.exercise102"}}</p>
+      {{/paper-link-item}}
+      {{#paper-link-item 'classroom2.exercise3'}}
         <p></p>
       {{/paper-link-item}}
-      {{#paper-link-item 'classroom2.exercise2'}}
+      {{#paper-link-item 'classroom2.exercise3'}}
         <p></p>
       {{/paper-link-item}}
-      {{#paper-link-item 'classroom2.exercise2'}}
+      {{#paper-link-item 'classroom2.exercise3'}}
         <p></p>
       {{/paper-link-item}}
-      {{#paper-link-item 'classroom2.exercise2'}}
+      {{#paper-link-item 'classroom2.exercise3'}}
         <p></p>
       {{/paper-link-item}}
-      {{#paper-link-item 'classroom2.exercise2'}}
-        <p></p>
-      {{/paper-link-item}}
-    </PaperList>    
+    </PaperList>
+
     <div>
       <PaperSelect @label={{t "classrooms.numberOfExercises"}} @options={{counts}} @selected={{count}} @onChange={{action configSelectCount2}} as |count|>
         {{count}}
@@ -34,12 +36,14 @@
       <PaperButton @onClick={{action "start"}} @accent={{true}} @raised={{true}} >Start</PaperButton>
     </div>
   </div>
+
   <div>
     {{outlet}}
   </div>
+  
   <div class="side-right">
     <PaperList>
-      {{#each results as |item idx|}}
+      {{#each this.results as |item idx| }}
         {{#if (eq idx 0)}}
           <div style="background-color: lightgrey">
             <PaperItem @class="md-1-line">
@@ -59,21 +63,9 @@
     </PaperList>
   </div>
 </div>
+
 <style>
   .md-input-has-value{
     width: 183px !important;
   }
 </style>
-<!--
-    <div>
-      <PaperSelect @label={{t "classrooms.resultLimit"}} @options={{maxResults}} @selected={{maxResult}} @onChange={{action configSelectMaxResult}} as |maxResult|>
-        {{maxResult}}
-      </PaperSelect>
-    </div>
-</div>
-<style>
-  .md-input-has-value{
-    width: 183px !important;
-  }
-</style>
--->

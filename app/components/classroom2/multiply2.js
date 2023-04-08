@@ -4,7 +4,7 @@ import { action } from '@ember/object';
 import { inject as service} from '@ember/service';
 //import { jsPDF } from "jspdf";
 
-export default class Multiplication extends Component {
+export default class PlusMinus extends Component {
 
   @service teacher;
 
@@ -12,8 +12,8 @@ export default class Multiplication extends Component {
     super(...arguments);
     let self = this;
     
-    if (! this.teacher.has('__multiplication1')){
-      this.teacher.on('__multiplication1', function(maxResult, range1, range2, count) {
+    if (! this.teacher.has('__multiply2')){
+      this.teacher.on('__multiply2', function(maxResult, range1, range2, count) {
         self.start(maxResult, range1, range2, count);
       });
     }
@@ -88,6 +88,7 @@ export default class Multiplication extends Component {
   }
 
   @action start(maxResult, range1, range2, count) {
+    console.log('start __multiply2');
     this.teacher.start(range1);
     let high1 = range1.substring(range1.indexOf(' - ') +3, range1.length);
     let high2 = 1;
@@ -99,7 +100,7 @@ export default class Multiplication extends Component {
 
       if ((random1 > 0) && (random2 > 0)){
 
-        let question = random1 + ' * ' + random2;
+        let question = random1 + ' * ' + 2;
         //let result = this.evaluate(question);
 
         //if (!this.teacher.questions.includes(question)) {

@@ -6,7 +6,7 @@ import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 
 const { keys } = Object;
-const cookieOptionsClassroom2 = {sameSite: 'none', secure: true, path: 'classroom2'};
+const cookieOptionsClassroom2 = { sameSite: 'none', secure: true, path: 'classroom2' };
 
 export default class Quiz extends Component {
 
@@ -29,19 +29,19 @@ export default class Quiz extends Component {
     super(...arguments);
 
     let self = this;
-    this.teacher.on('__results', function(results) {
+    this.teacher.on('__results', function (results) {
       self.results = results;
     });
 
     this.configReload2();
   }
 
-  configReload2(){
+  configReload2() {
     let cookieService = this.cookies;
     let cookiesMap = cookieService.read();
     keys(cookiesMap).reduce((acc, key) => {
       let value = cookiesMap[key];
-      switch(key) {
+      switch (key) {
         case 'configCount2':
           this.count = value;
           break;
@@ -58,26 +58,22 @@ export default class Quiz extends Component {
     }, []);
   }
 
-  @action configSelectCount2(value){
+  @action configSelectCount2(value) {
     this.count = value;
     this.cookies.write('configCount2', value, cookieOptionsClassroom2);
   }
 
-  /*
-  @action configSelectMaxResult2(value){
-    this.maxResult = value;
-    this.cookies.write('configMaxResult2', value, cookieOptionsClassroom2);
-  }
-  */
-
-  @action configSelectRange2(value){
+  @action configSelectRange2(value) {
     this.range1 = value;
     this.cookies.write('configRange2', value, cookieOptionsClassroom2);
   }
 
   @action start() {
-    if (this.teacher.quizMode == this.teacher.multiplication1){
+    if (this.teacher.quizMode === this.teacher.multiplication1) {
       this.teacher.trigger('__multiplication1', this.maxResult, this.range1, this.range1, this.count);
+
+    } else if (this.teacher.quizMode === this.teacher.multiply2) {
+      this.teacher.trigger('__multiply2', this.maxResult, this.range1, this.range1, this.count);
     }
   }
 }

@@ -1,4 +1,5 @@
-<PaperCard as |card|>
+{{!-- template-lint-disable no-unused-block-params require-valid-alt-text no-inline-styles --}}
+<PaperCard as |card| >
   <div class="layout-row flex layout-align-center" style="padding-top: 20px;">
     {{t "classrooms.exercise5"}}
   </div>
@@ -8,16 +9,16 @@
   </div>
 
   <div class="layout-row flex layout-align-center" style="padding-top: 20px;">
-    <PaperButton @raised={{true}} @fab={{true}} @onClick={{action "calc" "0"}} class="answerBtn">0</PaperButton>
-    <PaperButton @raised={{true}} @fab={{true}} @onClick={{action "calc" "1"}} class="answerBtn">1</PaperButton>
-    <PaperButton @raised={{true}} @fab={{true}} @onClick={{action "calc" "2"}} class="answerBtn">2</PaperButton>
-    <PaperButton @raised={{true}} @fab={{true}} @onClick={{action "calc" "3"}} class="answerBtn">3</PaperButton>
-    <PaperButton @raised={{true}} @fab={{true}} @onClick={{action "calc" "4"}} class="answerBtn">4</PaperButton>
-    <PaperButton @raised={{true}} @fab={{true}} @onClick={{action "calc" "5"}} class="answerBtn">5</PaperButton>
-    <PaperButton @raised={{true}} @fab={{true}} @onClick={{action "calc" "6"}} class="answerBtn">6</PaperButton>
-    <PaperButton @raised={{true}} @fab={{true}} @onClick={{action "calc" "7"}} class="answerBtn">7</PaperButton>
-    <PaperButton @raised={{true}} @fab={{true}} @onClick={{action "calc" "8"}} class="answerBtn">8</PaperButton>
-    <PaperButton @raised={{true}} @fab={{true}} @onClick={{action "calc" "9"}} class="answerBtn">9</PaperButton>
+    <PaperButton @raised={{true}} @fab={{true}} {{on "click" (fn this.calc "0")}} class="answerBtn">0</PaperButton>
+    <PaperButton @raised={{true}} @fab={{true}} {{on "click" (fn this.calc "1")}} class="answerBtn">1</PaperButton>
+    <PaperButton @raised={{true}} @fab={{true}} {{on "click" (fn this.calc "2")}} class="answerBtn">2</PaperButton>
+    <PaperButton @raised={{true}} @fab={{true}} {{on "click" (fn this.calc "3")}} class="answerBtn">3</PaperButton>
+    <PaperButton @raised={{true}} @fab={{true}} {{on "click" (fn this.calc "4")}} class="answerBtn">4</PaperButton>
+    <PaperButton @raised={{true}} @fab={{true}} {{on "click" (fn this.calc "5")}} class="answerBtn">5</PaperButton>
+    <PaperButton @raised={{true}} @fab={{true}} {{on "click" (fn this.calc "6")}} class="answerBtn">6</PaperButton>
+    <PaperButton @raised={{true}} @fab={{true}} {{on "click" (fn this.calc "7")}} class="answerBtn">7</PaperButton>
+    <PaperButton @raised={{true}} @fab={{true}} {{on "click" (fn this.calc "8")}} class="answerBtn">8</PaperButton>
+    <PaperButton @raised={{true}} @fab={{true}} {{on "click" (fn this.calc "9")}} class="answerBtn">9</PaperButton>
   </div>
 
   <div class="layout-row flex layout-align-center" style="padding-top: 20px;">

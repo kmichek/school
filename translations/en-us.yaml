@@ -14,6 +14,7 @@ classrooms:
   resultOK: Perfectly correct!
   resultNOK: Let's practice some more.
   exercise101: Multiplication
+  exercise102: Multiply 2
   range1: RANGE
   count: QUESTIONS
   errors: ERRORS
