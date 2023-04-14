@@ -14,7 +14,9 @@ classrooms:
   resultOK: Perfectly correct!
   resultNOK: Let's practice some more.
   exercise101: Multiplication
-  exercise102: Multiply 2
+  exercise102: Multiply by 2
+  exercise103: Multiply by 3
+  exercise104: Divide by 2
   range1: RANGE
   count: QUESTIONS
   errors: ERRORS

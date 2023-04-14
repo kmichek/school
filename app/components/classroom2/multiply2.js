@@ -46,14 +46,12 @@ export default class PlusMinus extends Component {
           this.teacher.completed = this.teacher.question + ' = ' +this.teacher.answer;
           this.teacher.addResult(result);
           isCorrect = true;
-          ////this.teacher.question = null;
 
         } else {
           let result = {question:this.teacher.question, answer:this.teacher.answer, status:':-('}
           this.completed = ':-(';
           this.teacher.addResult(result);
         }
-        /////this.teacher.answer = '';
 
         setTimeout(() => {
           this.teacher.completed = null;
@@ -101,7 +99,6 @@ export default class PlusMinus extends Component {
       if ((random1 > 0) && (random2 > 0)){
 
         let question = random1 + ' * ' + 2;
-        //let result = this.evaluate(question);
 
         //if (!this.teacher.questions.includes(question)) {
           this.teacher.questions.push(question);

@@ -21,6 +21,8 @@ export default class TeacherService extends Service.extend(Evented) {
   quizSubtractOrder = 'Q_SUBTRACT_ORDER';
   multiplication1 = 'Q_MULTIPLICATION_1';
   multiply2 = 'Q_MULTIPLY_2';
+  multiply3 = 'Q_MULTIPLY_3';
+  divide2 = 'Q_DIVIDE_2';
 
   @tracked questions;
   @tracked question;
