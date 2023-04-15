@@ -19,9 +19,6 @@ export default class PlusMinus extends Component {
         this.stats.forEach(statsLine => {
             let aQuiz = '';
             switch (statsLine.quiz){
-                case this.teacher.multiplication1: {
-                    aQuiz = this.intl.t('classrooms.exercise101'); break;
-                }
                 case this.teacher.quizPlusMinus2: {
                     aQuiz = this.intl.t('classrooms.exercise1'); break;
                 }
@@ -36,6 +33,18 @@ export default class PlusMinus extends Component {
                 }
                 case this.teacher.quizSubtractOrder: {
                     aQuiz = this.intl.t('classrooms.exercise5'); break;
+                }
+                case this.teacher.multiplication1: {
+                    aQuiz = this.intl.t('classrooms.exercise101'); break;
+                }
+                case this.teacher.multiply2: {
+                    aQuiz = this.intl.t('classrooms.exercise102'); break;
+                }
+                case this.teacher.multiply3: {
+                    aQuiz = this.intl.t('classrooms.exercise103'); break;
+                }
+                case this.teacher.divide2: {
+                    aQuiz = this.intl.t('classrooms.exercise104'); break;
                 }
             }
 
