@@ -81,6 +81,8 @@ export default class Quiz extends Component {
     } else if (this.teacher.quizMode === this.teacher.divide2) {
       this.teacher.trigger('__divide2', this.maxResult, this.range1, this.range1, this.count);
 
+    } else if (this.teacher.quizMode === this.teacher.divide3) {
+      this.teacher.trigger('__divide3', this.maxResult, this.range1, this.range1, this.count);
     }
   }
 }

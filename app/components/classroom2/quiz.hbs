@@ -15,20 +15,20 @@
         <p>{{t "classrooms.exercise104"}}</p>
       {{/paper-link-item}}
       {{#paper-link-item 'classroom2.exercise5'}}
-        <p></p>
+        <p>{{t "classrooms.exercise105"}}</p>
       {{/paper-link-item}}
-      {{#paper-link-item 'classroom2.exercise5'}}
+      {{#paper-link-item 'classroom2.exercise6'}}
         <p></p>
       {{/paper-link-item}}
     </PaperList>
 
     <div>
-      <PaperSelect @label={{t "classrooms.numberOfExercises"}} @options={{counts}} @selected={{count}} @onChange={{action configSelectCount2}} as |count|>
+      <PaperSelect @label={{t "classrooms.numberOfExercises"}} @options={{this.counts}} @selected={{this.count}} @onChange={{action this.configSelectCount2}} as |count|>
         {{count}}
       </PaperSelect>
     </div>
     <div>
-      <PaperSelect @label={{t "classrooms.range"}} @options={{ranges1}} @selected={{range1}} @onChange={{action configSelectRange2}} as |range1|>
+      <PaperSelect @label={{t "classrooms.range"}} @options={{this.ranges1}} @selected={{this.range1}} @onChange={{action configSelectRange2}} as |range1|>
         {{range1}}
       </PaperSelect>
     </div>

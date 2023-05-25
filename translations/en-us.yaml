@@ -17,6 +17,7 @@ classrooms:
   exercise102: Multiply by 2
   exercise103: Multiply by 3
   exercise104: Divide by 2
+  exercise105: Divide by 3
   range1: RANGE
   count: QUESTIONS
   errors: ERRORS

@@ -11,9 +11,8 @@ export default class PlusMinus extends Component {
   constructor() {
     super(...arguments);
     let self = this;
-
-    if (!this.teacher.has('__divide2')) {
-      this.teacher.on('__divide2', function (maxResult, range1, range2, count) {
+    if (!this.teacher.has('__divide3')) {
+      this.teacher.on('__divide3', function (maxResult, range1, range2, count) {
         self.start(maxResult, range1, range2, count);
       });
     }
@@ -93,9 +92,9 @@ export default class PlusMinus extends Component {
     let max = 1;
     while (counter > 0 && max < 100) {
       max++;
-      let random1 = (Math.floor(Math.random() * (high1 - high2)) + high2) * 2;
+      let random1 = (Math.floor(Math.random() * (high1 - high2)) + high2) * 3;
       if (random1 > 0 && random1 <= high1) {
-        let question = random1 + ' / ' + 2;
+        let question = random1 + ' / ' + 3;
         //if (!this.teacher.questions.includes(question)) {
         this.teacher.questions.push(question);
         counter--;

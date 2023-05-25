@@ -21,6 +21,7 @@ Router.map(function () {
     this.route('exercise3');
     this.route('exercise4');
     this.route('exercise5');
+    this.route('exercise6');
   });
   this.route('stats');
 });

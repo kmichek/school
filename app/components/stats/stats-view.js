@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import { inject as service} from '@ember/service';
+import { inject as service } from '@ember/service';
 import { storageFor } from 'ember-local-storage';
 import moment from 'moment';
 
@@ -15,10 +15,10 @@ export default class PlusMinus extends Component {
 
     constructor() {
         super(...arguments);
-        
+
         this.stats.forEach(statsLine => {
             let aQuiz = '';
-            switch (statsLine.quiz){
+            switch (statsLine.quiz) {
                 case this.teacher.quizPlusMinus2: {
                     aQuiz = this.intl.t('classrooms.exercise1'); break;
                 }
@@ -46,6 +46,9 @@ export default class PlusMinus extends Component {
                 case this.teacher.divide2: {
                     aQuiz = this.intl.t('classrooms.exercise104'); break;
                 }
+                case this.teacher.divide3: {
+                    aQuiz = this.intl.t('classrooms.exercise105'); break;
+                }
             }
 
             const line = {
@@ -60,6 +63,5 @@ export default class PlusMinus extends Component {
         })
 
         console.log('this.statLines: ', this.statLines);
-
     }
 }
