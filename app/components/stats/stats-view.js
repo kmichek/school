@@ -43,11 +43,14 @@ export default class PlusMinus extends Component {
                 case this.teacher.multiply3: {
                     aQuiz = this.intl.t('classrooms.exercise103'); break;
                 }
+                case this.teacher.multiply4: {
+                    aQuiz = this.intl.t('classrooms.exercise106'); break;
+                }
                 case this.teacher.divide2: {
                     aQuiz = this.intl.t('classrooms.exercise104'); break;
                 }
                 case this.teacher.divide3: {
-                    aQuiz = this.intl.t('classrooms.exercise105'); break;
+                    aQuiz = this.intl.t('classrooms.exercise105'); break;                    
                 }
             }
 
