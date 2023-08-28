@@ -6,7 +6,7 @@ import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 
 const { keys } = Object;
-const cookieOptionsClassroom2 = { sameSite: 'none', secure: true, path: 'classroom2' };
+const cookieOptionsClassroom3 = { sameSite: 'none', secure: true, path: 'classroom3' };
 
 export default class Quiz extends Component {
 
@@ -33,22 +33,22 @@ export default class Quiz extends Component {
       self.results = results;
     });
 
-    this.configReload2();
+    this.configReload3();
   }
 
-  configReload2() {
+  configReload3() {
     let cookieService = this.cookies;
     let cookiesMap = cookieService.read();
     keys(cookiesMap).reduce((acc, key) => {
       let value = cookiesMap[key];
       switch (key) {
-        case 'configCount2':
+        case 'configCount3':
           this.count = value;
           break;
-        case 'configMaxResult2':
+        case 'configMaxResult3':
           this.maxResult = value;
           break;
-        case 'configRange2':
+        case 'configRange3':
           this.range1 = value;
           break;
         case 'configLocale':
@@ -58,20 +58,21 @@ export default class Quiz extends Component {
     }, []);
   }
 
-  @action configSelectCount2(value) {
+  @action configSelectCount3(value) {
     this.count = value;
-    this.cookies.write('configCount2', value, cookieOptionsClassroom2);
+    this.cookies.write('configCount3', value, cookieOptionsClassroom3);
   }
 
-  @action configSelectRange2(value) {
+  @action configSelectRange3(value) {
     this.range1 = value;
-    this.cookies.write('configRange2', value, cookieOptionsClassroom2);
+    this.cookies.write('configRange3', value, cookieOptionsClassroom3);
   }
 
   @action start() {
-    if (this.teacher.quizMode === this.teacher.multiplication1) {
-      this.teacher.trigger('__multiplication1', this.maxResult, this.range1, this.range1, this.count);
+    if (this.teacher.quizMode === this.teacher.divide4) {
+      this.teacher.trigger('__divide4', this.maxResult, this.range1, this.range1, this.count);
 
+      /*
     } else if (this.teacher.quizMode === this.teacher.multiply2) {
       this.teacher.trigger('__multiply2', this.maxResult, this.range1, this.range1, this.count);
 
@@ -86,6 +87,7 @@ export default class Quiz extends Component {
 
     } else if (this.teacher.quizMode === this.teacher.divide3) {
       this.teacher.trigger('__divide3', this.maxResult, this.range1, this.range1, this.count);
+      */
     }
   }
 }

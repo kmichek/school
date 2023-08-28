@@ -25,6 +25,7 @@ export default class TeacherService extends Service.extend(Evented) {
   multiply4 = 'Q_MULTIPLY_4';
   divide2 = 'Q_DIVIDE_2';
   divide3 = 'Q_DIVIDE_3';
+  divide4 = 'Q_DIVIDE_4';
 
   @tracked questions;
   @tracked question;
@@ -61,7 +62,7 @@ export default class TeacherService extends Service.extend(Evented) {
     return value.status === 'OK';
   }
 
-  finitoStats(){    
+  finitoStats(){
     const statsLine = {
       timeFrom: this.startTime,
       timeTo: (new Date()).getTime(),
@@ -70,7 +71,7 @@ export default class TeacherService extends Service.extend(Evented) {
       counter: this.results.filter(v => v.status === 'OK').length,
       errors: this.results.filter(v => v.status !== 'OK').length
     }
-    
+
     this.stats.addObject(statsLine);
 
     this.startTime = null;

@@ -2,6 +2,7 @@ price_banner: The {product} costs {price, number, ::currency/USD}
 classrooms:
   classroom1: Classroom 1
   classroom2: Classroom 2
+  classroom3: Classroom 3
   exercise1: Add and subtract 2
   exercise2: Add and subtract 3
   exercise3: Greater or smaller
@@ -22,3 +23,10 @@ classrooms:
   range1: RANGE
   count: QUESTIONS
   errors: ERRORS
+  exercise301: Divide by 4
+  exercise302: Multiply by 5
+  exercise303: Divide by 5
+  exercise304: Multiply by 6
+  exercise305: Divide by 6
+  exercise306: Multiply by 7
+

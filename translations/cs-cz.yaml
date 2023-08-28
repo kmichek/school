@@ -1,6 +1,7 @@
 classrooms:
   classroom1: Učebna 1
   classroom2: Učebna 2
+  classroom3: Učebna 3
   exercise1: Sčítat a odečítat 2
   exercise2: Sčítat a odečítat 3
   exercise3: Větší a menší
@@ -21,3 +22,9 @@ classrooms:
   range1: ROZSAH
   count: PŘÍKLADŮ
   errors: CHYBY
+  exercise301: Dělení 4
+  exercise302: Násobilka 5
+  exercise303: Dělení 5
+  exercise304: Násobilka 6
+  exercise305: Dělení 6
+  exercise306: Násobilka 7

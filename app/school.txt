@@ -38,3 +38,5 @@ new:
 "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
 "editor.fontLigatures": true,
 
+buttons style:
+https://jsfiddle.net/bootstrapious/g6bt8v9z
