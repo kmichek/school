@@ -72,10 +72,10 @@ export default class Quiz extends Component {
     if (this.teacher.quizMode === this.teacher.divide4) {
       this.teacher.trigger('__divide4', this.maxResult, this.range1, this.range1, this.count);
 
-      /*
-    } else if (this.teacher.quizMode === this.teacher.multiply2) {
-      this.teacher.trigger('__multiply2', this.maxResult, this.range1, this.range1, this.count);
+    } else if (this.teacher.quizMode === this.teacher.multiply5) {
+      this.teacher.trigger('__multiply5', this.maxResult, this.range1, this.range1, this.count);
 
+    /*
     } else if (this.teacher.quizMode === this.teacher.multiply3) {
       this.teacher.trigger('__multiply3', this.maxResult, this.range1, this.range1, this.count);
 
