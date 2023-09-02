@@ -26,6 +26,7 @@ Router.map(function () {
   this.route('classroom3', function () {
     this.route('exercise1');
     this.route('exercise2');
+    this.route('exercise3');
   });
   this.route('stats');
 });

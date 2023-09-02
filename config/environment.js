@@ -21,6 +21,13 @@ module.exports = function (environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+
+    'ember-cli-google': {
+      analytics: {
+        version: 'v4',
+        measurementId: 'G-DCNWVVKWTG',
+      },
+    },
   };
 
   if (environment === 'development') {
