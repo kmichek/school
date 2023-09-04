@@ -61,6 +61,12 @@ export default class PlusMinus extends Component {
         case this.teacher.divide5: {
           aQuiz = this.intl.t('classrooms.exercise303'); break;
         }
+        case this.teacher.multiply6: {
+          aQuiz = this.intl.t('classrooms.exercise304'); break;
+        }
+        case this.teacher.divide6: {
+          aQuiz = this.intl.t('classrooms.exercise305'); break;
+        }
       }
 
       const line = {

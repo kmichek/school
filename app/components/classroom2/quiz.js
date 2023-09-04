@@ -33,7 +33,7 @@ export default class Quiz extends Component {
       self.results = results;
     });
 
-    this.configReload2();
+    //this.configReload2();
   }
 
   configReload2() {

@@ -7,7 +7,7 @@ export default class ApplicationRoute extends Route {
   @service intl;
 
   beforeModel() {
-    this.intl.setLocale(['en-us']);
+    //this.intl.setLocale(['en-us']);
     this.router.transitionTo('classroom1.exercise1');
   }
 }
