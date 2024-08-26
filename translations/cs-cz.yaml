@@ -2,6 +2,7 @@ classrooms:
   classroom1: Učebna 1
   classroom2: Učebna 2
   classroom3: Učebna 3
+  classroom4: Učebna 4
   exercise1: Sčítat a odečítat 2
   exercise2: Sčítat a odečítat 3
   exercise3: Větší a menší
@@ -28,5 +29,6 @@ classrooms:
   exercise304: Násobilka 6
   exercise305: Dělení 6
   exercise306: Násobilka 7
+  exercise407: Dělení 7
 typing:
   title: Psaní

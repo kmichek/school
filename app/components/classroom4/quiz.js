@@ -69,23 +69,8 @@ export default class Quiz extends Component {
   }
 
   @action start() {
-    if (this.teacher.quizMode === this.teacher.divide4) {
-      this.teacher.trigger('__divide4', this.maxResult, this.range1, this.range1, this.count);
-
-    } else if (this.teacher.quizMode === this.teacher.multiply5) {
-      this.teacher.trigger('__multiply5', this.maxResult, this.range1, this.range1, this.count);
-
-    } else if (this.teacher.quizMode === this.teacher.divide5) {
-      this.teacher.trigger('__divide5', this.maxResult, this.range1, this.range1, this.count);
-
-    } else if (this.teacher.quizMode === this.teacher.multiply6) {
-      this.teacher.trigger('__multiply6', this.maxResult, this.range1, this.range1, this.count);
-
-    } else if (this.teacher.quizMode === this.teacher.divide6) {
-      this.teacher.trigger('__divide6', this.maxResult, this.range1, this.range1, this.count);
-
-    } else if (this.teacher.quizMode === this.teacher.multiply7) {
-      this.teacher.trigger('__multiply7', this.maxResult, this.range1, this.range1, this.count);
+    if (this.teacher.quizMode === this.teacher.divide7) {
+      this.teacher.trigger('__divide7', this.maxResult, this.range1, this.range1, this.count);
 
     }
   }

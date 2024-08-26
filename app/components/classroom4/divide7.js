@@ -11,8 +11,8 @@ export default class PlusMinus extends Component {
   constructor() {
     super(...arguments);
     let self = this;
-    if (!this.teacher.has('__divide5')) {
-      this.teacher.on('__divide5', function (maxResult, range1, range2, count) {
+    if (!this.teacher.has('__divide7')) {
+      this.teacher.on('__divide7', function (maxResult, range1, range2, count) {
         self.start(maxResult, range1, range2, count);
       });
     }
@@ -83,7 +83,6 @@ export default class PlusMinus extends Component {
     if (this.teacher.questions.length == 0) {
       document.getElementById('dvFireworks').style.display = 'block';
       document.getElementById('dvPicture').style.display = 'none';
-
       this.teacher.finito();
     }
   }
@@ -96,13 +95,11 @@ export default class PlusMinus extends Component {
     let max = 1;
     while (counter > 0 && max < 100) {
       max++;
-      let random1 = (Math.floor(Math.random() * (high1 - high2)) + high2) * 5;
+      let random1 = (Math.floor(Math.random() * (high1 - high2)) + high2) * 7;
       if (random1 > 0 && random1 <= high1) {
-        let question = random1 + ' / ' + 5;
-        //if (!this.teacher.questions.includes(question)) {
+        let question = random1 + ' / ' + 7;
         this.teacher.questions.push(question);
         counter--;
-        //}
       }
     }
 

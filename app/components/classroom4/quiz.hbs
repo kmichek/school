@@ -1,0 +1,56 @@
+{{!-- template-lint-disable no-inline-styles no-forbidden-elements --}}
+<div class="layout-row">
+  <div class="side-left">
+    <PaperList>
+      {{#paper-link-item 'classroom4.exercise1'}}
+        <p>{{t "classrooms.exercise407"}}</p>
+      {{/paper-link-item}}
+    </PaperList>
+
+    <div>
+      <PaperSelect @label={{t "classrooms.numberOfExercises"}} @options={{this.counts}} @selected={{this.count}} @onChange={{action this.configSelectCount3}} as |count|>
+        {{count}}
+      </PaperSelect>
+    </div>
+    <div>
+      <PaperSelect @label={{t "classrooms.range"}} @options={{this.ranges1}} @selected={{this.range1}} @onChange={{action configSelectRange3}} as |range1|>
+        {{range1}}
+      </PaperSelect>
+    </div>
+    <div style="padding-left: 88px;">
+      <PaperButton @onClick={{action "start"}} @accent={{true}} @raised={{true}} >Start</PaperButton>
+    </div>
+  </div>
+
+  <div>
+    {{outlet}}
+  </div>
+
+  <div class="side-right">
+    <PaperList>
+      {{#each this.results as |item idx| }}
+        {{#if (eq idx 0)}}
+          <div style="background-color: lightgrey">
+            <PaperItem @class="md-1-line">
+              <div class="md-list-item-text">
+                {{item.question}} &nbsp; ? &nbsp; {{item.answer}} &nbsp; &nbsp; &nbsp;{{item.status}}
+              </div>
+            </PaperItem>
+          </div>
+        {{else}}
+          <PaperItem @class="md-1-line">
+            <div class="md-list-item-text">
+              {{item.question}} &nbsp; ? &nbsp; {{item.answer}} &nbsp; &nbsp; &nbsp;{{item.status}}
+            </div>
+          </PaperItem>
+        {{/if}}
+      {{/each}}
+    </PaperList>
+  </div>
+</div>
+
+<style>
+  .md-input-has-value{
+    width: 183px !important;
+  }
+</style>

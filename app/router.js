@@ -31,6 +31,9 @@ Router.map(function () {
     this.route('exercise5');
     this.route('exercise6');
   });
+  this.route('classroom4', function () {
+    this.route('exercise1');
+  });
   this.route('stats');
   this.route('typing');
 });

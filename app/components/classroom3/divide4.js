@@ -68,6 +68,10 @@ export default class PlusMinus extends Component {
     }
   }
 
+  @action delete() {
+    this.teacher.answer = '';
+  }
+
   evaluate(question) {
     if (question) {
       let token = question.split(' ');

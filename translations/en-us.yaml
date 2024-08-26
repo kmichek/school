@@ -3,6 +3,7 @@ classrooms:
   classroom1: Classroom 1
   classroom2: Classroom 2
   classroom3: Classroom 3
+  classroom4: Classroom 4
   exercise1: Add and subtract 2
   exercise2: Add and subtract 3
   exercise3: Greater or smaller
@@ -29,6 +30,7 @@ classrooms:
   exercise304: Multiply by 6
   exercise305: Divide by 6
   exercise306: Multiply by 7
+  exercise407: Divide by 7
 typing:
   title: Typing
 

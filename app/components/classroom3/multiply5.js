@@ -71,6 +71,10 @@ export default class Multiply5 extends Component {
     }
   }
 
+  @action delete() {
+    this.teacher.answer = '';
+  }
+
   evaluate(question) {
     if (question) {
       let token = question.split(' ');
