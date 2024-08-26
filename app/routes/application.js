@@ -8,6 +8,8 @@ export default class ApplicationRoute extends Route {
 
   beforeModel() {
     //this.intl.setLocale(['en-us']);
+    this.intl.setLocale(['cs-cz']);
     this.router.transitionTo('classroom1.exercise1');
+    //this.router.transitionTo('typing');
   }
 }
