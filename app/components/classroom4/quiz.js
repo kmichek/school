@@ -72,6 +72,17 @@ export default class Quiz extends Component {
     if (this.teacher.quizMode === this.teacher.divide7) {
       this.teacher.trigger('__divide7', this.maxResult, this.range1, this.range1, this.count);
 
+    } else if (this.teacher.quizMode === this.teacher.multiply8) {
+      this.teacher.trigger('__multiply8', this.maxResult, this.range1, this.range1, this.count);
+
+    } else if (this.teacher.quizMode === this.teacher.divide8) {
+      this.teacher.trigger('__divide8', this.maxResult, this.range1, this.range1, this.count);
+
+    } else if (this.teacher.quizMode === this.teacher.multiply9) {
+      this.teacher.trigger('__multiply9', this.maxResult, this.range1, this.range1, this.count);
+
+    } else if (this.teacher.quizMode === this.teacher.divide9) {
+      this.teacher.trigger('__divide9', this.maxResult, this.range1, this.range1, this.count);
     }
   }
 }

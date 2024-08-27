@@ -32,6 +32,10 @@ export default class TeacherService extends Service.extend(Evented) {
   divide6 = 'Q_DIVIDE_6';
   multiply7 = 'Q_MULTIPLY_7';
   divide7 = 'Q_DIVIDE_7';
+  multiply8 = 'Q_MULTIPLY_8';
+  divide8 = 'Q_DIVIDE_8';
+  multiply9 = 'Q_MULTIPLY_9';
+  divide9 = 'Q_DIVIDE_9';
 
   @tracked questions;
   @tracked question;

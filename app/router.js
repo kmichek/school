@@ -33,6 +33,10 @@ Router.map(function () {
   });
   this.route('classroom4', function () {
     this.route('exercise1');
+    this.route('exercise2');
+    this.route('exercise3');
+    this.route('exercise4');
+    this.route('exercise5');
   });
   this.route('stats');
   this.route('typing');
