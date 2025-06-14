@@ -111,4 +111,7 @@ export default class PlusMinus extends Component {
     document.getElementById('dvPicture').style.display = 'block';
   }
 
+  @action x() {
+    this.teacher.x();
+  }
 }

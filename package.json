@@ -78,6 +78,7 @@
     "edition": "octane"
   },
   "dependencies": {
-    "firebase": "^9.9.3"
+    "firebase": "^9.9.3",
+    "write-excel-file": "^2.0.10"
   }
 }

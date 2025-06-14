@@ -114,4 +114,7 @@ export default class Multiply5 extends Component {
     document.getElementById('dvPicture').style.display = 'block';
   }
 
+  @action x() {
+    this.teacher.x();
+  }
 }

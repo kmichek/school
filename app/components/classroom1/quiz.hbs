@@ -1,3 +1,6 @@
+{{!-- template-lint-disable no-inline-styles --}}
+{{!-- template-lint-disable no-forbidden-elements --}}
+{{!-- template-lint-disable no-html-comments --}}
 <div class="layout-row">
   <div class="side-left">
     <PaperList>
@@ -18,22 +21,22 @@
       {{/paper-link-item}}
     </PaperList>
     <div>
-      <PaperSelect @label={{t "classrooms.numberOfExercises"}} @options={{counts}} @selected={{count}} @onChange={{action configSelectCount}} as |count|>
+      <PaperSelect @label={{t "classrooms.numberOfExercises"}} @options={{this.counts}} @selected={{this.count}} @onChange={{this.configSelectCount}} as |count|>
         {{count}}
       </PaperSelect>
     </div>
     <div>
-      <PaperSelect @label={{t "classrooms.resultLimit"}} @options={{maxResults}} @selected={{maxResult}} @onChange={{action configSelectMaxResult}} as |maxResult|>
+      <PaperSelect @label={{t "classrooms.resultLimit"}} @options={{this.maxResults}} @selected={{this.maxResult}} @onChange={{this.configSelectMaxResult}} as |maxResult|>
         {{maxResult}}
       </PaperSelect>
     </div>
     <div>
-      <PaperSelect @label={{t "classrooms.range"}} @options={{ranges1}} @selected={{range1}} @onChange={{action configSelectRange1}} as |range1|>
+      <PaperSelect @label={{t "classrooms.range"}} @options={{this.ranges1}} @selected={{this.range1}} @onChange={{this.configSelectRange1}} as |range1|>
         {{range1}}
       </PaperSelect>
     </div>
     <div style="padding-left: 88px;">
-      <PaperButton @onClick={{action "start"}} @accent={{true}} @raised={{true}} >Start</PaperButton>
+      <PaperButton @onClick={{this.start}} @accent={{true}} @raised={{true}}>Start</PaperButton>
     </div>
   </div>
   <div>
@@ -41,19 +44,17 @@
   </div>
   <div class="side-right">
     <PaperList>
-      {{#each results as |item idx|}}
+      {{#each this.results as |item idx|}}
         {{#if (eq idx 0)}}
           <div style="background-color: lightgrey">
             <PaperItem @class="md-1-line">
-              <div class="md-list-item-text">
-                {{item.question}}&nbsp;&nbsp;?&nbsp;&nbsp;{{item.answer}}&nbsp;&nbsp;{{item.status}}
-              </div>
+              <Common::ResultLine @question={{item.question}} @answer={{item.answer}} @status={{item.status}} />
             </PaperItem>
           </div>
         {{else}}
           <PaperItem @class="md-1-line">
             <div class="md-list-item-text">
-              {{item.question}}&nbsp;&nbsp;?&nbsp;&nbsp;{{item.answer}}&nbsp;&nbsp;{{item.status}}
+              <Common::ResultLine @question={{item.question}} @answer={{item.answer}} @status={{item.status}} />
             </div>
           </PaperItem>
         {{/if}}
@@ -61,6 +62,7 @@
     </PaperList>
   </div>
 </div>
+
 <style>
   .md-input-has-value{
     width: 183px !important;

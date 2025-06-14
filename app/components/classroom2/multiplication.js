@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
-import { inject as service} from '@ember/service';
+import { inject as service } from '@ember/service';
 //import { jsPDF } from "jspdf";
 
 export default class Multiplication extends Component {
@@ -11,17 +11,17 @@ export default class Multiplication extends Component {
   constructor() {
     super(...arguments);
     let self = this;
-    
-    if (! this.teacher.has('__multiplication1')){
-      this.teacher.on('__multiplication1', function(maxResult, range1, range2, count) {
+
+    if (!this.teacher.has('__multiplication1')) {
+      this.teacher.on('__multiplication1', function (maxResult, range1, range2, count) {
         self.start(maxResult, range1, range2, count);
       });
     }
     this.teacher.question = null;
   }
 
-  answerAllowedFor(solution){
-    if (solution == 0 || solution > 0){
+  answerAllowedFor(solution) {
+    if (solution == 0 || solution > 0) {
       return this.teacher.answer == null || this.teacher.answer == '' || (this.teacher.answer.toString().length < solution.toString().length);
 
     } else {
@@ -29,27 +29,27 @@ export default class Multiplication extends Component {
     }
   }
 
-  answerReady(solution){
+  answerReady(solution) {
     return this.teacher.answer.toString().length == solution.toString().length;
   }
 
-  @action calc(key){
+  @action calc(key) {
 
     let solution = this.evaluate(this.teacher.question);
 
-    if (this.answerAllowedFor(solution)){
+    if (this.answerAllowedFor(solution)) {
       this.teacher.answer = this.teacher.answer + '' + key;
-      if (this.answerReady(solution)){
+      if (this.answerReady(solution)) {
         let isCorrect = false;
-        if (solution == this.teacher.answer){
-          let result = {question:this.teacher.question, answer:this.teacher.answer, status:'OK'};
-          this.teacher.completed = this.teacher.question + ' = ' +this.teacher.answer;
+        if (solution == this.teacher.answer) {
+          let result = { question: this.teacher.question, answer: this.teacher.answer, status: 'OK' };
+          this.teacher.completed = this.teacher.question + ' = ' + this.teacher.answer;
           this.teacher.addResult(result);
           isCorrect = true;
           ////this.teacher.question = null;
 
         } else {
-          let result = {question:this.teacher.question, answer:this.teacher.answer, status:':-('}
+          let result = { question: this.teacher.question, answer: this.teacher.answer, status: ':-(' }
           this.completed = ':-(';
           this.teacher.addResult(result);
         }
@@ -58,8 +58,8 @@ export default class Multiplication extends Component {
         setTimeout(() => {
           this.teacher.completed = null;
           this.teacher.answer = '';
-          if (isCorrect){
-            if (this.teacher.questions.length > 0){
+          if (isCorrect) {
+            if (this.teacher.questions.length > 0) {
               this.teacher.questions.shift();
               this.teacher.question = this.teacher.questions[0];
             }
@@ -71,10 +71,10 @@ export default class Multiplication extends Component {
     }
   }
 
-  evaluate(question){
-    if (question){
+  evaluate(question) {
+    if (question) {
       let token = question.split(' ');
-      return (token[0]*1) * (token[2]*1);
+      return (token[0] * 1) * (token[2] * 1);
     }
   }
 
@@ -89,26 +89,26 @@ export default class Multiplication extends Component {
 
   @action start(maxResult, range1, range2, count) {
     this.teacher.start(range1);
-    let high1 = range1.substring(range1.indexOf(' - ') +3, range1.length);
+    let high1 = range1.substring(range1.indexOf(' - ') + 3, range1.length);
     let high2 = 1;
     let counter = count * 1;
 
-    while (counter > 0){
-      let random1 = Math.floor(Math.random() * (high1 - high2) ) + high2;
-      let random2 = Math.floor(Math.random() * (high1 - high2) ) + high2;
+    while (counter > 0) {
+      let random1 = Math.floor(Math.random() * (high1 - high2)) + high2;
+      let random2 = Math.floor(Math.random() * (high1 - high2)) + high2;
 
-      if ((random1 > 0) && (random2 > 0)){
+      if ((random1 > 0) && (random2 > 0)) {
 
         let question = random1 + ' * ' + random2;
         //let result = this.evaluate(question);
 
         //if (!this.teacher.questions.includes(question)) {
-          this.teacher.questions.push(question);
-          counter--;
+        this.teacher.questions.push(question);
+        counter--;
         //}
-      }  
+      }
     }
-    
+
     console.log('questions', this.teacher.questions);
     this.teacher.question = this.teacher.questions[0];
     this.teacher.trigger('__results', []);
@@ -118,4 +118,7 @@ export default class Multiplication extends Component {
     document.getElementById('dvPicture').style.display = 'block';
   }
 
+  @action x() {
+    this.teacher.x();
+  }
 }

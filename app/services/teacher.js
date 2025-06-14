@@ -47,13 +47,13 @@ export default class TeacherService extends Service.extend(Evented) {
   startTime;
   range1;
 
-  addResult(result){
+  addResult(result) {
     this.results.unshift(result);
     this.trigger('__results', this.results);
   }
 
   finito() {
-    if (this.results){
+    if (this.results) {
       if (this.results.every(this.finitoEveryOK)) {
         this.result = this.intl.t('classrooms.resultOK');
 
@@ -61,7 +61,7 @@ export default class TeacherService extends Service.extend(Evented) {
         this.result = this.intl.t('classrooms.resultNOK');
       }
 
-      if (this.startTime){
+      if (this.startTime) {
         this.finitoStats();
       }
     }
@@ -72,7 +72,7 @@ export default class TeacherService extends Service.extend(Evented) {
     return value.status === 'OK';
   }
 
-  finitoStats(){
+  finitoStats() {
     const statsLine = {
       timeFrom: this.startTime,
       timeTo: (new Date()).getTime(),
@@ -87,12 +87,20 @@ export default class TeacherService extends Service.extend(Evented) {
     this.startTime = null;
   }
 
-  start(range1){
+  start(range1) {
     this.questions = [];
     this.results = [];
     this.result = null;
     this.startTime = new Date().getTime();
     this.range1 = range1;
+  }
+
+  x() { // restart the last question
+    this.completed = null;
+    this.answer = '';
+    if (this.questions) {
+      this.question = this.questions[0];
+    }
   }
 
 }

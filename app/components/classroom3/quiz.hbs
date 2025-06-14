@@ -23,17 +23,17 @@
     </PaperList>
 
     <div>
-      <PaperSelect @label={{t "classrooms.numberOfExercises"}} @options={{this.counts}} @selected={{this.count}} @onChange={{action this.configSelectCount3}} as |count|>
+      <PaperSelect @label={{t "classrooms.numberOfExercises"}} @options={{this.counts}} @selected={{this.count}} @onChange={{this.configSelectCount3}} as |count|>
         {{count}}
       </PaperSelect>
     </div>
     <div>
-      <PaperSelect @label={{t "classrooms.range"}} @options={{this.ranges1}} @selected={{this.range1}} @onChange={{action configSelectRange3}} as |range1|>
+      <PaperSelect @label={{t "classrooms.range"}} @options={{this.ranges1}} @selected={{this.range1}} @onChange={{this.configSelectRange3}} as |range1|>
         {{range1}}
       </PaperSelect>
     </div>
     <div style="padding-left: 88px;">
-      <PaperButton @onClick={{action "start"}} @accent={{true}} @raised={{true}} >Start</PaperButton>
+      <PaperButton @onClick={{this.start}} @accent={{true}} @raised={{true}} >Start</PaperButton>
     </div>
   </div>
 
@@ -48,14 +48,14 @@
           <div style="background-color: lightgrey">
             <PaperItem @class="md-1-line">
               <div class="md-list-item-text">
-                {{item.question}} &nbsp; ? &nbsp; {{item.answer}} &nbsp; &nbsp; &nbsp;{{item.status}}
+                <Common::ResultLine @question={{item.question}} @answer={{item.answer}} @status={{item.status}} />
               </div>
             </PaperItem>
           </div>
         {{else}}
           <PaperItem @class="md-1-line">
             <div class="md-list-item-text">
-              {{item.question}} &nbsp; ? &nbsp; {{item.answer}} &nbsp; &nbsp; &nbsp;{{item.status}}
+              <Common::ResultLine @question={{item.question}} @answer={{item.answer}} @status={{item.status}} />
             </div>
           </PaperItem>
         {{/if}}

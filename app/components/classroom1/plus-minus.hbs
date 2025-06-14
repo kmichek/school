@@ -22,11 +22,16 @@
     <PaperButton @raised={{true}} @fab={{true}} {{on "click" (fn this.calc "6")}} class="answerBtn">6</PaperButton>
     <PaperButton @raised={{true}} @fab={{true}} {{on "click" (fn this.calc "7")}} class="answerBtn">7</PaperButton>
     <PaperButton @raised={{true}} @fab={{true}} {{on "click" (fn this.calc "8")}} class="answerBtn">8</PaperButton>
-    <PaperButton @raised={{true}} @fab={{true}} {{on "click" (fn this.calc "9")}} class="answerBtn">9</PaperButton>    
+    <PaperButton @raised={{true}} @fab={{true}} {{on "click" (fn this.calc "9")}} class="answerBtn">9</PaperButton>
   </div>
 
   <div class="layout-row flex layout-align-center" style="padding-top: 20px;">
     <div id="dvCompleted" class="answerBtn">{{this.teacher.completed}}</div>
+    {{#if this.teacher.completed}}
+      <div style="padding-left: 10px;">
+        <div class="brusselLentil"></div>
+      </div>
+    {{/if}}
   </div>
 
   <div class="layout-row flex layout-align-center" style="padding-top: 20px;">
@@ -36,6 +41,9 @@
     <br>
     <div id="dvPanda" style="display:block; ">
       <img src="../../Panda.png">
+    </div>
+    <div style="padding-top: 200px;">
+      <PaperButton @raised={{true}} @fab={{true}} {{on "click" (fn this.x "")}} class="answerBtn">X</PaperButton>
     </div>
   </div>
 </PaperCard>

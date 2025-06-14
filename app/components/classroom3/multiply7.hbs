@@ -34,5 +34,8 @@
     <div id="dvPicture" style="display:block; ">
       <img src="../../Tiger.png" width="380px" height="260px" style="cursor: pointer;" {{on "click" (fn this.delete "")}}>
     </div>
+    <div style="padding-top: 200px;">
+      <PaperButton @raised={{true}} @fab={{true}} {{on "click" (fn this.x "")}} class="answerBtn">X</PaperButton>
+    </div>
   </div>
 </PaperCard>

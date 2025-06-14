@@ -224,12 +224,7 @@ export default class PlusMinus extends Component {
     this.teacher.answer = '';
   }
 
-  /*
-  @action x(){
-    if (this.teacher.answer){
-      this.teacher.answer = this.teacher.answer.substring(0, this.teacher.answer.length-1);
-    }
+  @action x() {
+    this.teacher.x();
   }
-  */
-
 }
